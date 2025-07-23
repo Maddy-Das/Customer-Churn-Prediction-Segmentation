@@ -1,7 +1,3 @@
-# ============================
-# src/models.py
-# ============================
-
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -24,8 +20,8 @@ def train_classification_models(X_train, y_train):
     return trained
 
 def perform_clustering(X_scaled, n_clusters=4):
-    kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+    kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
     clusters = kmeans.fit_predict(X_scaled)
-    clustered_df = pd.DataFrame(X_scaled)
+    clustered_df = pd.DataFrame(X_scaled, columns=[f'feature_{i}' for i in range(X_scaled.shape[1])])
     clustered_df['cluster'] = clusters
     return clustered_df
