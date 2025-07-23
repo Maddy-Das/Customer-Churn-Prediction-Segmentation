@@ -1,0 +1,21 @@
+# Core Libraries
+pandas
+numpy
+
+# Visualization
+matplotlib
+seaborn
+
+# Machine Learning
+scikit-learn
+xgboost
+
+# Notebook Environment
+jupyterlab
+notebook
+
+# Model Serialization
+joblib
+
+# Optional: Suppress Warnings (if needed)
+warnings-filter
